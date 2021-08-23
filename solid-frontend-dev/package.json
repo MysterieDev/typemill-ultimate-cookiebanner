@@ -1,0 +1,23 @@
+{
+    "name": "vite-template-solid",
+    "version": "0.0.0",
+    "description": "",
+    "scripts": {
+        "start": "vite",
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview",
+        "styles": "node-sass --output-style compressed --omit-source-map-url sass/skeleton.scss src/assets/css/styles.css && node-sass --output-style compressed --omit-source-map-url sass/custom-styles.scss src/assets/css/custom-styles.css"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "bulma": "^0.9.3",
+        "node-sass": "^6.0.1",
+        "vite": "^2.4.4",
+        "vite-plugin-solid": "^2.0.1"
+    },
+    "dependencies": {
+        "js-cookie": "^3.0.0",
+        "solid-js": "^1.0.7"
+    }
+}
