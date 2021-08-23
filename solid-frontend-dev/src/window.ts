@@ -8,6 +8,7 @@ interface cookieBannerMeta {
   cookieBannerVersion: number;
   cookienameColumn: string;
   cookiehostColumn: string;
+  headline: string;
   cookiepersistenceColumn: string;
   Req: { text?: string; headline?: string };
   Fun: { text?: string; headline?: string };
