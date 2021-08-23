@@ -1,0 +1,17 @@
+name: Cookie Consent
+version: 1.0.1
+description: Enables a cookie consent for websites
+author: Sebastian Schürmanns
+homepage: https://cookieconsent.insites.com/
+licence: MIT
+
+settings:
+message:
+  "| Tables   |      Are      |  Cool ||----------|-------------|------|| col 1 is |  left-aligned | $1600 || col 2 is |    centered   |   $12 || col 3 is | right-aligned |    $1 |
+  "
+forms:
+  fields:
+    message:
+      type: textarea
+      label: Required Cookies
+      required: true

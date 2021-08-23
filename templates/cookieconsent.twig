@@ -1,0 +1,20 @@
+window.addEventListener("DOMContentLoaded", function(){
+
+	const templateDiv = document.createElement('DIV');
+	templateDiv.innerHTML =  `
+	<template id="cookieDefReq">
+	{{markdown(settings.plugins.cookieconsent.message)}}
+	</template>`
+	const rootDiv = document.createElement('DIV');
+	rootDiv.id = "solidApp"
+	document.body.appendChild(rootDiv);
+	document.body.appendChild(templateDiv);
+	const script = document.createElement('SCRIPT');
+	const vendor = document.createElement('SCRIPT');
+	script.src = '/plugins/cookieconsent/public/solid-script.js';
+	script.type = 'module';
+	vendor.src = '/plugins/cookieconsent/public/vendor.5f68fdfd.js';
+	vendor.type  = 'module';
+	document.body.appendChild(vendor);
+	document.body.appendChild(script);
+});
