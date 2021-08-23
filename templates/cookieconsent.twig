@@ -1,27 +1,56 @@
+console.log(`{{settings.plugins.cookieconsent.reqcookies}}`)
 window.addEventListener("DOMContentLoaded", function(){
-
+	window.cookiemeta = {
+	cookieBannerVersion: undefined,
+	cookienameColumn: undefined,
+	cookiehostColumn: undefined,
+	cookiepersistenceColumn: undefined,
+	Req: {text: undefined, headline: undefined},
+	Fun: {text: undefined, headline: undefined},
+	Mar: {text: undefined, headline: undefined}}
 	// add Version of the banner
-	window.cookieBannerVersion = {{settings.plugins.cookieconsent.consentversion}}
-
+	window.cookiemeta.cookieBannerVersion = {{settings.plugins.cookieconsent.consentversion}}
+	// add Name Definitions
+	window.cookiemeta.cookienameColumn = "{{settings.plugins.cookieconsent.cookiename}}"
+	window.cookiemeta.cookiehostColumn = "{{settings.plugins.cookieconsent.cookiehost}}"
+    window.cookiemeta.cookiepersistenceColumn = "{{settings.plugins.cookieconsent.cookiepersistence}}"
+	// add texts
+	window.cookiemeta.Req.text = `{{settings.plugins.cookieconsent.reqtext}}`
+	window.cookiemeta.Req.headline = `{{settings.plugins.cookieconsent.reqheadline}}`
+	window.cookiemeta.Fun.text = `{{settings.plugins.cookieconsent.funtext}}`
+	window.cookiemeta.Fun.headline = `{{settings.plugins.cookieconsent.funheadline}}`
+	window.cookiemeta.Mar.text = `{{settings.plugins.cookieconsent.martext}}`
+	window.cookiemeta.Mar.headline = `{{settings.plugins.cookieconsent.marheadline}}`
 	// required Cookies
 	const templateDivRequired = document.createElement('DIV');
 	templateDivRequired.innerHTML =
 	`<template id="cookieDefReq">
-	{{markdown(settings.plugins.cookieconsent.required)}}
+	{{markdown( 
+	'1|2|3\n' ~
+	 '---|---|---\n' ~
+	  settings.plugins.cookieconsent.reqcookies)}}
 	</template>`
 	document.body.appendChild(templateDivRequired);
 
 	// functional Cookies
 	const templateDivFunctional = document.createElement('DIV');
 	templateDivFunctional.innerHTML = `<template id="cookieDefFun">
-	{{markdown(settings.plugins.cookieconsent.functional)}}
+	{{markdown(
+	'1|2|3\n' ~
+	'---|---|---\n' ~
+	settings.plugins.cookieconsent.funcookies)}}
 	</template>`
 	document.body.appendChild(templateDivFunctional)
 
 	// marketing Cookies
 	const templateDivMarketing = document.createElement('DIV');
-	templateDivMarketing.innerHTML = `<template id="cookieDefMar">
-	{{markdown(settings.plugins.cookieconsent.marketing)}}
+	templateDivMarketing.innerHTML = `
+
+	<template id="cookieDefMar">
+	{{markdown(
+	'1|2|3\n' ~
+	'---|---|---\n' ~	
+	settings.plugins.cookieconsent.marcookies)}}
 	</template>`
 	document.body.appendChild(templateDivMarketing)
 

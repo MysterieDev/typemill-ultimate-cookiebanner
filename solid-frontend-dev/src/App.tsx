@@ -1,7 +1,10 @@
 import { Component, onMount } from "solid-js";
 import "./assets/css/styles.css";
 import "./assets/css/custom-styles.css";
-import { CookieTable } from "./listing/cookie-table";
+import {
+  CookieTable,
+  CookieCategorie as CookieCategory,
+} from "./listing/cookie-table";
 import { closeCookiebanner, disableOtherUI } from "./banner-handling";
 
 const App: Component = () => {
@@ -13,31 +16,24 @@ const App: Component = () => {
     <div id="backgroundContainer">
       <div className="container cookieContainer content">
         <h2>Wir respektieren Ihre Privatsphäre!</h2>
-        <p>
-          <strong>Erforderliche Cookies</strong>
-        </p>
-        <p>
-          Erfoderliche Cookies, sind Speicherelemente, die für den Betrieb
-          dieser Seite unerlässlich sind.
-        </p>
-        <small>
-          <a href="">..weniger anzeigen</a>
-        </small>
         <CookieTable
-          cookieNameTable="Cookie"
-          hostNameTable="Host"
-          persistenceNameTable="Speicherdauer"
+          category={CookieCategory.required}
+          cookieNameTable={window.cookiemeta.cookienameColumn}
+          hostNameTable={window.cookiemeta.cookiehostColumn}
+          persistenceNameTable={window.cookiemeta.cookiepersistenceColumn}
         />
-        <p>
-          <strong>Funktionale Cookies</strong>
-        </p>
-        <p>
-          Funktionale Cookies erfassen statistische Werte, die uns helfen,
-          unsere Prozesse zu erfassen.
-        </p>
-        <small>
-          <a href="">..mehr anzeigen</a>
-        </small>
+        <CookieTable
+          category={CookieCategory.functional}
+          cookieNameTable={window.cookiemeta.cookienameColumn}
+          hostNameTable={window.cookiemeta.cookiehostColumn}
+          persistenceNameTable={window.cookiemeta.cookiepersistenceColumn}
+        />
+        <CookieTable
+          category={CookieCategory.marketing}
+          cookieNameTable={window.cookiemeta.cookienameColumn}
+          hostNameTable={window.cookiemeta.cookiehostColumn}
+          persistenceNameTable={window.cookiemeta.cookiepersistenceColumn}
+        />
         <div className="columns is-mobile">
           <div className="column">
             <button className="button is-secondary" onClick={closeCookiebanner}>

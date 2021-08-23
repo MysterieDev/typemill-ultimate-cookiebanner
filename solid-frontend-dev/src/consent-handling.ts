@@ -1,7 +1,7 @@
 import Cookies from "js-cookie";
 
-const consentVersion = window.cookieBannerVersion
-  ? window.cookieBannerVersion.toString()
+const consentVersion = window.cookiemeta.cookieBannerVersion
+  ? window.cookiemeta.cookieBannerVersion.toString()
   : "0";
 const consentCookie = "cbSet";
 const consentDurationInDays = 365;

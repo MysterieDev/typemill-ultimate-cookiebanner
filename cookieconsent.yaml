@@ -8,11 +8,58 @@ licence: MIT
 settings:
 forms:
   fields:
-    required:
-      type: textarea
-      label: Required Cookies - you have to use a markdown table as follows: cookieName | cookieHost | cookiePersistence 
-      required: true
     consentversion:
       type: text
       label: Consent Version - Increment this string number to force a new cookiebanner to show
       required: true
+    cookiename:
+      type: text
+      label: Name for CookieName column
+      required: true
+    cookiehost:
+      type: text
+      label: Name for CookieHost column
+      required: true
+    cookiepersistence:
+      type: text
+      label: Name for CookiePersistence column
+      required: true
+    required:
+      type: fieldset
+      legend: config for required Cookies
+      fields:
+        reqcookies:
+          type: textarea
+          label: Required Cookies - you have to use a markdown table as follows: cookieName | cookieHost | cookiePersistence 
+        reqheadline:
+          type: text
+          label: The headline for this cookie category    
+        reqtext:
+          type: textarea
+          label: a text describing what the functional cookie category does for your site
+    functional:
+      type: fieldset
+      legend: config for funcional Cookies
+      fields:
+        funcookies:
+          type: textarea
+          label: functional Cookies - you have to use a markdown table as follows: cookieName | cookieHost | cookiePersistence 
+        funheadline:
+          type: text
+          label: The headline for this cookie category    
+        funtext:
+          type: textarea
+          label: a text describing what the functional cookie category does for your site
+    marketing:
+      type: fieldset
+      legend: config for marketing Cookies
+      fields:
+        marcookies:
+          type: textarea
+          label: Marketing Cookies - you have to use a markdown table as follows: cookieName | cookieHost | cookiePersistence 
+        marheadline:
+          type: text
+          label: The headline for this cookie category    
+        martext:
+          type: textarea
+          label: a text describing what the functional cookie category does for your site

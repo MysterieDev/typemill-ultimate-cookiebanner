@@ -1,40 +1,59 @@
 import { onMount } from "solid-js";
 
 export function CookieTable(props) {
-  onMount(() => {
-    generateListing();
-  });
-  return (
-    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-      <thead>
-        <tr>
-          <th>{props.cookieNameTable}</th>
-          <th>{props.hostNameTable}</th>
-          <th>{props.persistenceNameTable}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {generateListing().map((cookieDef) => (
+  let category = props.category;
+  let cookies = generateListing(category);
+  return cookies && cookies.length > 0 ? (
+    <div>
+      <p>
+        <strong>{window.cookiemeta[category].headline}</strong>
+      </p>
+      <p>{window.cookiemeta[category].text}</p>
+      <small>
+        <a href="">..weniger anzeigen</a>
+      </small>
+      <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <thead>
           <tr>
-            <td>{cookieDef.name}</td>
-            <td>{cookieDef.host}</td>
-            <td>{cookieDef.persistence}</td>
+            <th>{props.cookieNameTable}</th>
+            <th>{props.hostNameTable}</th>
+            <th>{props.persistenceNameTable}</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {cookies.map((cookieDef) => (
+            <tr>
+              <td>{cookieDef.name}</td>
+              <td>{cookieDef.host}</td>
+              <td>{cookieDef.persistence}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  ) : (
+    ""
   );
 }
 
-function generateListing() {
+function generateListing(category: CookieCategorie) {
   const cookies: CookieDefinition[] = [];
   const requiredCookiesTemplate =
     // Get Table Template
-    document.querySelector<HTMLTemplateElement>("#cookieDefReq").content
+    document.querySelector<HTMLTemplateElement>("#cookieDef" + category).content
       .firstElementChild;
-  const requiredCookies = requiredCookiesTemplate.querySelector("tbody");
+  if (!requiredCookiesTemplate) {
+    return [];
+  }
+  const requiredCookiesBody = requiredCookiesTemplate.querySelector("tbody");
   // Each Table Row represents a Cookie Definition
-  const requiredCookiesDefinition = requiredCookies.querySelectorAll("tr");
+  if (!requiredCookiesBody) {
+    return [];
+  }
+  const requiredCookiesDefinition = requiredCookiesBody.querySelectorAll("tr");
+  if (!requiredCookiesDefinition) {
+    return [];
+  }
   requiredCookiesDefinition.forEach((def) => {
     const cookieDef: CookieDefinition = {
       name: "",
@@ -72,4 +91,10 @@ interface CookieDefinition {
   name: string;
   host?: string;
   persistence?: string;
+}
+
+export enum CookieCategorie {
+  required = "Req",
+  functional = "Fun",
+  marketing = "Mar",
 }

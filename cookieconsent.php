@@ -30,8 +30,7 @@ class CookieConsent extends Plugin
 		$twig 	= $this->getTwig();					
 		$loader = $twig->getLoader();
 		$loader->addPath(__DIR__ . '/templates');
-	
-		/* fetch the template, render it with twig and add it as inline-javascript */
+		/* fetch the template, render it with twig and add it sas inline-javascript */
 		$this->addInlineJS($twig->fetch('/cookieconsent.twig', $this->settings));
 	}
 }
