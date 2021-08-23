@@ -24,7 +24,7 @@ class CookieConsent extends Plugin
 	public function onTwigLoaded()
 	{
 		/* add external CSS and JavaScript */
-		$this->addCSS('/cookieconsent/public/solid-css.css');	
+		$this->addCSS('/cookieconsent/public/cookiebanner-assets.css');	
 
 		/* get Twig Instance and add the cookieconsent template-folder to the path */
 		$twig 	= $this->getTwig();					
