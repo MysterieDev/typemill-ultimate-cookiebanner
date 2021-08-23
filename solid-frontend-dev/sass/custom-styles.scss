@@ -1,6 +1,8 @@
 .cbPreventScroll {
     overflow: hidden;
-    position: fixed;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 #solidApp {

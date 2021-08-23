@@ -1,14 +1,33 @@
 window.addEventListener("DOMContentLoaded", function(){
 
-	const templateDiv = document.createElement('DIV');
-	templateDiv.innerHTML =  `
-	<template id="cookieDefReq">
-	{{markdown(settings.plugins.cookieconsent.message)}}
+	// add Version of the banner
+	window.cookieBannerVersion = {{settings.plugins.cookieconsent.consentversion}}
+
+	// required Cookies
+	const templateDivRequired = document.createElement('DIV');
+	templateDivRequired.innerHTML =
+	`<template id="cookieDefReq">
+	{{markdown(settings.plugins.cookieconsent.required)}}
 	</template>`
+	document.body.appendChild(templateDivRequired);
+
+	// functional Cookies
+	const templateDivFunctional = document.createElement('DIV');
+	templateDivFunctional.innerHTML = `<template id="cookieDefFun">
+	{{markdown(settings.plugins.cookieconsent.functional)}}
+	</template>`
+	document.body.appendChild(templateDivFunctional)
+
+	// marketing Cookies
+	const templateDivMarketing = document.createElement('DIV');
+	templateDivMarketing.innerHTML = `<template id="cookieDefMar">
+	{{markdown(settings.plugins.cookieconsent.marketing)}}
+	</template>`
+	document.body.appendChild(templateDivMarketing)
+
 	const rootDiv = document.createElement('DIV');
 	rootDiv.id = "solidApp"
 	document.body.appendChild(rootDiv);
-	document.body.appendChild(templateDiv);
 	const script = document.createElement('SCRIPT');
 	const vendor = document.createElement('SCRIPT');
 	script.src = '/plugins/cookieconsent/public/cookiebanner-index.min.js';

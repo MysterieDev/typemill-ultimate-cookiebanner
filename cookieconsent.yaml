@@ -6,12 +6,13 @@ homepage: https://cookieconsent.insites.com/
 licence: MIT
 
 settings:
-message:
-  "| Tables   |      Are      |  Cool ||----------|-------------|------|| col 1 is |  left-aligned | $1600 || col 2 is |    centered   |   $12 || col 3 is | right-aligned |    $1 |
-  "
 forms:
   fields:
-    message:
+    required:
       type: textarea
-      label: Required Cookies
+      label: Required Cookies - you have to use a markdown table as follows: cookieName | cookieHost | cookiePersistence 
+      required: true
+    consentversion:
+      type: text
+      label: Consent Version - Increment this string number to force a new cookiebanner to show
       required: true

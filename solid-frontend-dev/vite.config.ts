@@ -4,14 +4,14 @@ import solidPlugin from "vite-plugin-solid";
 export default defineConfig({
   plugins: [solidPlugin()],
   build: {
-    outDir: "..",
+    outDir: "../public",
     polyfillDynamicImport: false,
     rollupOptions: {
       output: {
         compact: true,
-        entryFileNames: `public/cookiebanner-[name].min.js`,
-        chunkFileNames: `public/cookiebanner-[name].min.js`,
-        assetFileNames: `public/cookiebanner-assets.[ext]`,
+        entryFileNames: `cookiebanner-[name].min.js`,
+        chunkFileNames: `cookiebanner-[name].min.js`,
+        assetFileNames: `cookiebanner-assets.[ext]`,
       },
     },
   },
