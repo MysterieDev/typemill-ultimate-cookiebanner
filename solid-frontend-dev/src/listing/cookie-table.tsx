@@ -1,35 +1,50 @@
-import { onMount } from "solid-js";
+import { createSignal } from "solid-js";
 
 export function CookieTable(props) {
   let category = props.category;
   let cookies = generateListing(category);
+
+  const [tableOpen, toggleTable] = createSignal(false);
+
   return cookies && cookies.length > 0 ? (
     <div>
       <p>
         <strong>{window.cookiemeta[category].headline}</strong>
       </p>
-      <p>{window.cookiemeta[category].text}</p>
-      <small>
-        <a href="">..weniger anzeigen</a>
-      </small>
-      <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-        <thead>
-          <tr>
-            <th>{props.cookieNameTable}</th>
-            <th>{props.hostNameTable}</th>
-            <th>{props.persistenceNameTable}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {cookies.map((cookieDef) => (
+      <p>
+        {window.cookiemeta[category].text}
+        <br />
+        <small
+          style="font-weight: bold;"
+          onClick={() => {
+            toggleTable(!tableOpen());
+          }}
+        >
+          ..{tableOpen() ? "weniger" : "mehr"} anzeigen
+        </small>
+      </p>
+      {tableOpen() ? (
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <thead>
             <tr>
-              <td>{cookieDef.name}</td>
-              <td>{cookieDef.host}</td>
-              <td>{cookieDef.persistence}</td>
+              <th>{props.cookieNameTable}</th>
+              <th>{props.hostNameTable}</th>
+              <th>{props.persistenceNameTable}</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {cookies.map((cookieDef) => (
+              <tr>
+                <td>{cookieDef.name}</td>
+                <td>{cookieDef.host}</td>
+                <td>{cookieDef.persistence}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        ""
+      )}
     </div>
   ) : (
     ""
