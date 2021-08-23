@@ -15,7 +15,7 @@ const App: Component = () => {
   return (
     <div id="backgroundContainer">
       <div className="container cookieContainer content">
-        <h2>Wir respektieren Ihre Privatsphäre!</h2>
+        <h2 textContent={window.cookiemeta.headline}></h2>
         <CookieTable
           category={CookieCategory.required}
           cookieNameTable={window.cookiemeta.cookienameColumn}

@@ -8,7 +8,11 @@ licence: MIT
 settings:
 forms:
   fields:
-    consentversion:
+    headline:
+      type: text
+      label: headline of the banner
+      required: true
+      consentversion:
       type: text
       label: Consent Version - Increment this string number to force a new cookiebanner to show
       required: true

@@ -4,10 +4,13 @@ window.addEventListener("DOMContentLoaded", function(){
 	cookieBannerVersion: undefined,
 	cookienameColumn: undefined,
 	cookiehostColumn: undefined,
+	headline: undefined,
 	cookiepersistenceColumn: undefined,
 	Req: {text: undefined, headline: undefined},
 	Fun: {text: undefined, headline: undefined},
 	Mar: {text: undefined, headline: undefined}}
+	// add headline
+	window.cookiemeta.headline = '{{settings.plugins.cookieconsent.headline}}'
 	// add Version of the banner
 	window.cookiemeta.cookieBannerVersion = {{settings.plugins.cookieconsent.consentversion}}
 	// add Name Definitions
