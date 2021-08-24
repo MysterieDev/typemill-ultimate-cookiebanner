@@ -12,15 +12,15 @@ export function CookieTable(props) {
       <p>
         <strong>{window.cookiemeta[category].headline}</strong>
       </p>
-      <p>
+      <p
+        className="marginBtns"
+        onClick={() => {
+          toggleTable(!tableOpen());
+        }}
+      >
         {window.cookiemeta[category] ? window.cookiemeta[category].text : ""}
         <br />
-        <small
-          style="font-weight: bold;"
-          onClick={() => {
-            toggleTable(!tableOpen());
-          }}
-        >
+        <small style="font-weight: bold;">
           ..{tableOpen() ? hideCookiesLabel : showCookiesLabel}
         </small>
       </p>

@@ -8,7 +8,9 @@ import { CookieCategory as CookieCategory } from "./listing/cookie-table";
 
 let consent = { req: true, fun: false, mar: false };
 
-const finishedConsentEvent = new CustomEvent("build", { detail: consent });
+const finishedConsentEvent = new CustomEvent("bannerconsent", {
+  detail: consent,
+});
 
 export const rootName = "#solidApp";
 export const preventScrollClass = "cbPreventScroll";

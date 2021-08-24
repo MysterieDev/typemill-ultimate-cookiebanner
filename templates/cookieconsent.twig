@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	cookienameColumn: undefined,
 	cookiehostColumn: undefined,
 	headline: undefined,
+	introduction: undefined,
 	showmore: undefined,
 	showless: undefined,
 	acceptallbtn: undefined,
@@ -15,12 +16,13 @@ window.addEventListener("DOMContentLoaded", function(){
 	Mar: {text: undefined, headline: undefined}}
 	// add headline
 	window.cookiemeta.headline = '{{settings.plugins.cookieconsent.headline}}'
+	window.cookiemeta.introduction = `{{markdown(settings.plugins.cookieconsent.introduction)}}`
 	// add general settings
 	window.cookiemeta.showmore = '{{settings.plugins.cookieconsent.showmore}}'
 	window.cookiemeta.showless = '{{settings.plugins.cookieconsent.showless}}'
 	window.cookiemeta.acceptallbtn = '{{settings.plugins.cookieconsent.acceptallbtn}}'
 	window.cookiemeta.declinenonrequiredbtn = '{{settings.plugins.cookieconsent.declinenonrequiredbtn}}'
-	window.cookiemeta.saveselectionbtn = '{{settings.plugins.cookieconsent.saveselectionbtn}}'
+	window.cookiemeta.onlyfunctionalbtn = '{{settings.plugins.cookieconsent.onlyfunctionalbtn}}'
 	// add Version of the banner
 	window.cookiemeta.cookieBannerVersion = {{settings.plugins.cookieconsent.consentversion}};
 	// add Name Definitions
@@ -83,6 +85,6 @@ window.addEventListener("DOMContentLoaded", function(){
 	document.body.appendChild(script);
 });
 
-window.addEventListener('bannerconsent',()=>{
+window.addEventListener('bannerconsent',(e)=>{
 	{{settings.plugins.cookieconsent.javascriptcallback}}
 })

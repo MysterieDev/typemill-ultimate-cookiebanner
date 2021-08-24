@@ -13,6 +13,7 @@ const App: Component = () => {
     <div id="backgroundContainer">
       <div className="container cookieContainer content">
         <h2 textContent={window.cookiemeta.headline}></h2>
+        <p innerHTML={window.cookiemeta.introduction}></p>
         <CookieTable
           category={CookieCategory.required}
           cookieNameTable={window.cookiemeta.cookienameColumn}
@@ -31,19 +32,29 @@ const App: Component = () => {
           hostNameTable={window.cookiemeta.cookiehostColumn}
           persistenceNameTable={window.cookiemeta.cookiepersistenceColumn}
         />
-        <div className="columns is-mobile">
+        <div className="columns mt-2">
           <div className="column">
             <button
-              className="button is-secondary"
+              className="button is-small is-secondary"
               onClick={() => closeCookiebanner(CookieCategory.required)}
             >
               {window.cookiemeta.declinenonrequiredbtn}
             </button>
           </div>
+        </div>
+        <div className="columns">
           <div className="column">
             <button
-              className="button is-primary"
+              className="button is-small is-secondary"
               onClick={() => closeCookiebanner(CookieCategory.functional)}
+            >
+              {window.cookiemeta.onlyfunctionalbtn}
+            </button>
+          </div>
+          <div className="column">
+            <button
+              className="button  is-primary"
+              onClick={() => closeCookiebanner(CookieCategory.marketing)}
             >
               {window.cookiemeta.acceptallbtn}
             </button>

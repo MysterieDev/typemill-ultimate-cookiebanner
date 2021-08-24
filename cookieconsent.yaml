@@ -16,10 +16,12 @@ forms:
           type: text
           label: headline of the banner
           required: true
+        introduction:
+          type: textarea
+          label: introduction text
         javascriptcallback:
-          type: text
-          label: callback of the banner - carries an object: { req: true/false, fun: true/false, mar: true/false} for the categories required, functional and marekting. True is for "user has consented"
-          required: true
+          type: textarea
+          label: callback of the banner - carries an object: { req: true/false, fun: true/false, mar: true/false} for the categories required, functional and marekting. True is for "user has consented". You can get it with 'e.detail'
         consentversion:
           type: text
           label: Consent Version - Increment this string number to force a new cookiebanner to show
@@ -40,9 +42,9 @@ forms:
           type: text
           label: Label of the decline non-neccesary cookies button
           required: true
-        saveselectionbtn:
+        onlyfunctionalbtn:
           type: text
-          label: Label of the save configuration cookies button
+          label: Label of the only functional and required cookies button
           required: true
         cookiename:
           type: text

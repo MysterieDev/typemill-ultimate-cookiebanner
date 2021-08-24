@@ -15,26 +15,41 @@ export function setConsentVersionCookie() {
 }
 
 export function setConsentReqCookie() {
-  return Cookies.set(consentReqCookie, "1", {
+  return Cookies.set(consentReqCookie, "TRUE", {
     expires: consentDurationInDays,
   });
 }
 export function setConsentFunCookie(allowed: boolean) {
-  return Cookies.set(consentMarCookie, allowed ? "1" : "0", {
+  return Cookies.set(consentMarCookie, allowed ? "TRUE" : "FALSE", {
     expires: consentDurationInDays,
   });
 }
 
 export function setConsentMarCookie(allowed: boolean) {
-  return Cookies.set(consentFunCookie, allowed ? "1" : "0", {
+  return Cookies.set(consentFunCookie, allowed ? "TRUE" : "FALSE", {
     expires: consentDurationInDays,
   });
 }
 
 export function doesItneedToShowBanner() {
   if (Cookies.get(consentVersionCookie) === consentVersion) {
-    return false;
+    if (
+      Cookies.get(consentReqCookie) &&
+      Cookies.get(consentFunCookie) &&
+      Cookies.get(consentMarCookie)
+    ) {
+      return false;
+    }
+    cleanCookies();
+    return true;
   } else {
+    cleanCookies();
     return true;
   }
+}
+
+function cleanCookies() {
+  Cookies.remove(consentReqCookie);
+  Cookies.remove(consentFunCookie);
+  Cookies.remove(consentMarCookie);
 }
