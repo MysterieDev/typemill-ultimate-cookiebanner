@@ -2,8 +2,13 @@ import {
   setConsentVersionCookie,
   setConsentFunCookie,
   setConsentReqCookie,
+  setConsentMarCookie,
 } from "./consent-handling";
 import { CookieCategory as CookieCategory } from "./listing/cookie-table";
+
+let consent = { req: true, fun: false, mar: false };
+
+const finishedConsentEvent = new CustomEvent("build", { detail: consent });
 
 export const rootName = "#solidApp";
 export const preventScrollClass = "cbPreventScroll";
@@ -19,9 +24,18 @@ export function handleFinishedConsentInteraction(category: CookieCategory) {
   setConsentReqCookie();
   if (category === CookieCategory.functional) {
     setConsentFunCookie(true);
+    consent.fun = true;
   } else {
     setConsentFunCookie(false);
   }
+  if (category === CookieCategory.marketing) {
+    setConsentMarCookie(true);
+    consent.mar = true;
+  } else {
+    setConsentMarCookie(false);
+  }
+
+  window.dispatchEvent(finishedConsentEvent);
 }
 
 export function disableOtherUI() {

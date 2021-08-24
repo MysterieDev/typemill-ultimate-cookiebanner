@@ -6,6 +6,7 @@ const consentVersion = window.cookiemeta.cookieBannerVersion
 const consentVersionCookie = "cbSet";
 const consentReqCookie = "cbReq";
 const consentFunCookie = "cbFun";
+const consentMarCookie = "cbMar";
 const consentDurationInDays = 365;
 export function setConsentVersionCookie() {
   return Cookies.set(consentVersionCookie, consentVersion, {
@@ -14,12 +15,18 @@ export function setConsentVersionCookie() {
 }
 
 export function setConsentReqCookie() {
-  return Cookies.set(consentReqCookie, "TRUE", {
+  return Cookies.set(consentReqCookie, "1", {
     expires: consentDurationInDays,
   });
 }
 export function setConsentFunCookie(allowed: boolean) {
-  return Cookies.set(consentFunCookie, allowed ? "TRUE" : "FALSE", {
+  return Cookies.set(consentMarCookie, allowed ? "1" : "0", {
+    expires: consentDurationInDays,
+  });
+}
+
+export function setConsentMarCookie(allowed: boolean) {
+  return Cookies.set(consentFunCookie, allowed ? "1" : "0", {
     expires: consentDurationInDays,
   });
 }

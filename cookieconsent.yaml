@@ -16,6 +16,10 @@ forms:
           type: text
           label: headline of the banner
           required: true
+        javascriptcallback:
+          type: text
+          label: callback of the banner - carries an object: { req: true/false, fun: true/false, mar: true/false} for the categories required, functional and marekting. True is for "user has consented"
+          required: true
         consentversion:
           type: text
           label: Consent Version - Increment this string number to force a new cookiebanner to show
