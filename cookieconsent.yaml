@@ -8,26 +8,50 @@ licence: MIT
 settings:
 forms:
   fields:
-    headline:
-      type: text
-      label: headline of the banner
-      required: true
-      consentversion:
-      type: text
-      label: Consent Version - Increment this string number to force a new cookiebanner to show
-      required: true
-    cookiename:
-      type: text
-      label: Name for CookieName column
-      required: true
-    cookiehost:
-      type: text
-      label: Name for CookieHost column
-      required: true
-    cookiepersistence:
-      type: text
-      label: Name for CookiePersistence column
-      required: true
+    general:
+      type: fieldset
+      legend: general settings for the banner
+      fields:
+        headline:
+          type: text
+          label: headline of the banner
+          required: true
+        consentversion:
+          type: text
+          label: Consent Version - Increment this string number to force a new cookiebanner to show
+          required: true
+        showmore:
+          type: text
+          label: Label of the show more button
+          required: true
+        showless:
+          type: text
+          label: Label of the show less button
+          required: true
+        acceptallbtn:
+          type: text
+          label: Label of the accept all button
+          required: true
+        declinenonrequiredbtn:
+          type: text
+          label: Label of the decline non-neccesary cookies button
+          required: true
+        saveselectionbtn:
+          type: text
+          label: Label of the save configuration cookies button
+          required: true
+        cookiename:
+          type: text
+          label: Name for CookieName column
+          required: true
+        cookiehost:
+          type: text
+          label: Name for CookieHost column
+          required: true
+        cookiepersistence:
+          type: text
+          label: Name for CookiePersistence column
+          required: true
     required:
       type: fieldset
       legend: config for required Cookies

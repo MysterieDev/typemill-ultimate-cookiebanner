@@ -1,9 +1,10 @@
 import { createSignal } from "solid-js";
 
 export function CookieTable(props) {
-  let category = props.category;
+  let category: CookieCategorie = props.category;
   let cookies = generateListing(category);
-
+  let showCookiesLabel: string = window.cookiemeta.showmore;
+  let hideCookiesLabel: string = window.cookiemeta.showless;
   const [tableOpen, toggleTable] = createSignal(false);
 
   return cookies && cookies.length > 0 ? (
@@ -12,7 +13,7 @@ export function CookieTable(props) {
         <strong>{window.cookiemeta[category].headline}</strong>
       </p>
       <p>
-        {window.cookiemeta[category].text}
+        {window.cookiemeta[category] ? window.cookiemeta[category].text : ""}
         <br />
         <small
           style="font-weight: bold;"
@@ -20,7 +21,7 @@ export function CookieTable(props) {
             toggleTable(!tableOpen());
           }}
         >
-          ..{tableOpen() ? "weniger" : "mehr"} anzeigen
+          ..{tableOpen() ? hideCookiesLabel : showCookiesLabel}
         </small>
       </p>
       {tableOpen() ? (

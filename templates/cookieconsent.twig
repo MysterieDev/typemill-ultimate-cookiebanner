@@ -4,12 +4,23 @@ window.addEventListener("DOMContentLoaded", function(){
 	cookienameColumn: undefined,
 	cookiehostColumn: undefined,
 	headline: undefined,
+	showmore: undefined,
+	showless: undefined,
+	acceptallbtn: undefined,
+	declinenonrequiredbtn: undefined,
+	saveselectionbtn: undefined,
 	cookiepersistenceColumn: undefined,
 	Req: {text: undefined, headline: undefined},
 	Fun: {text: undefined, headline: undefined},
 	Mar: {text: undefined, headline: undefined}}
 	// add headline
 	window.cookiemeta.headline = '{{settings.plugins.cookieconsent.headline}}'
+	// add general settings
+	window.cookiemeta.showmore = '{{settings.plugins.cookieconsent.showmore}}'
+	window.cookiemeta.showless = '{{settings.plugins.cookieconsent.showless}}'
+	window.cookiemeta.acceptallbtn = '{{settings.plugins.cookieconsent.acceptallbtn}}'
+	window.cookiemeta.declinenonrequiredbtn = '{{settings.plugins.cookieconsent.declinenonrequiredbtn}}'
+	window.cookiemeta.saveselectionbtn = '{{settings.plugins.cookieconsent.saveselectionbtn}}'
 	// add Version of the banner
 	window.cookiemeta.cookieBannerVersion = {{settings.plugins.cookieconsent.consentversion}}
 	// add Name Definitions

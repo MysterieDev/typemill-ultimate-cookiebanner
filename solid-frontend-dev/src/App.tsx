@@ -37,12 +37,12 @@ const App: Component = () => {
         <div className="columns is-mobile">
           <div className="column">
             <button className="button is-secondary" onClick={closeCookiebanner}>
-              Ablehnen
+              {window.cookiemeta.declinenonrequiredbtn}
             </button>
           </div>
           <div className="column">
             <button className="button is-primary" onClick={closeCookiebanner}>
-              Annehmen
+              {window.cookiemeta.acceptallbtn}
             </button>
           </div>
         </div>
