@@ -1,8 +1,7 @@
-name: Cookie Consent
+name: Cookie Banner
 version: 1.0.1
-description: Enables a cookie consent for websites
-author: Sebastian Schürmanns
-homepage: https://cookieconsent.insites.com/
+description: Enables a cookie banner for websites
+author: Josef Slezak
 licence: MIT
 
 settings:

@@ -15,27 +15,27 @@ window.addEventListener("DOMContentLoaded", function(){
 	Fun: {text: undefined, headline: undefined},
 	Mar: {text: undefined, headline: undefined}}
 	// add headline
-	window.cookiemeta.headline = '{{settings.plugins.cookieconsent.headline}}'
-	window.cookiemeta.introduction = `{{markdown(settings.plugins.cookieconsent.introduction)}}`
+	window.cookiemeta.headline = '{{settings.plugins.cookiebanner.headline}}'
+	window.cookiemeta.introduction = `{{markdown(settings.plugins.cookiebanner.introduction)}}`
 	// add general settings
-	window.cookiemeta.showmore = '{{settings.plugins.cookieconsent.showmore}}'
-	window.cookiemeta.showless = '{{settings.plugins.cookieconsent.showless}}'
-	window.cookiemeta.acceptallbtn = '{{settings.plugins.cookieconsent.acceptallbtn}}'
-	window.cookiemeta.declinenonrequiredbtn = '{{settings.plugins.cookieconsent.declinenonrequiredbtn}}'
-	window.cookiemeta.onlyfunctionalbtn = '{{settings.plugins.cookieconsent.onlyfunctionalbtn}}'
+	window.cookiemeta.showmore = '{{settings.plugins.cookiebanner.showmore}}'
+	window.cookiemeta.showless = '{{settings.plugins.cookiebanner.showless}}'
+	window.cookiemeta.acceptallbtn = '{{settings.plugins.cookiebanner.acceptallbtn}}'
+	window.cookiemeta.declinenonrequiredbtn = '{{settings.plugins.cookiebanner.declinenonrequiredbtn}}'
+	window.cookiemeta.onlyfunctionalbtn = '{{settings.plugins.cookiebanner.onlyfunctionalbtn}}'
 	// add Version of the banner
-	window.cookiemeta.cookieBannerVersion = {{settings.plugins.cookieconsent.consentversion}};
+	window.cookiemeta.cookieBannerVersion = {{settings.plugins.cookiebanner.consentversion}};
 	// add Name Definitions
-	window.cookiemeta.cookienameColumn = "{{settings.plugins.cookieconsent.cookiename}}"
-	window.cookiemeta.cookiehostColumn = "{{settings.plugins.cookieconsent.cookiehost}}"
-    window.cookiemeta.cookiepersistenceColumn = "{{settings.plugins.cookieconsent.cookiepersistence}}"
+	window.cookiemeta.cookienameColumn = "{{settings.plugins.cookiebanner.cookiename}}"
+	window.cookiemeta.cookiehostColumn = "{{settings.plugins.cookiebanner.cookiehost}}"
+    window.cookiemeta.cookiepersistenceColumn = "{{settings.plugins.cookiebanner.cookiepersistence}}"
 	// add texts
-	window.cookiemeta.Req.text = `{{settings.plugins.cookieconsent.reqtext}}`
-	window.cookiemeta.Req.headline = `{{settings.plugins.cookieconsent.reqheadline}}`
-	window.cookiemeta.Fun.text = `{{settings.plugins.cookieconsent.funtext}}`
-	window.cookiemeta.Fun.headline = `{{settings.plugins.cookieconsent.funheadline}}`
-	window.cookiemeta.Mar.text = `{{settings.plugins.cookieconsent.martext}}`
-	window.cookiemeta.Mar.headline = `{{settings.plugins.cookieconsent.marheadline}}`
+	window.cookiemeta.Req.text = `{{settings.plugins.cookiebanner.reqtext}}`
+	window.cookiemeta.Req.headline = `{{settings.plugins.cookiebanner.reqheadline}}`
+	window.cookiemeta.Fun.text = `{{settings.plugins.cookiebanner.funtext}}`
+	window.cookiemeta.Fun.headline = `{{settings.plugins.cookiebanner.funheadline}}`
+	window.cookiemeta.Mar.text = `{{settings.plugins.cookiebanner.martext}}`
+	window.cookiemeta.Mar.headline = `{{settings.plugins.cookiebanner.marheadline}}`
 	// required Cookies
 	const templateDivRequired = document.createElement('DIV');
 	templateDivRequired.innerHTML =
@@ -46,7 +46,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	 'cbSet|/|365\n' ~
 	 'cbReq|/|365\n' ~
 	 'cbOther|/|365\n' ~
-	  settings.plugins.cookieconsent.reqcookies)}}
+	  settings.plugins.cookiebanner.reqcookies)}}
 	</template>`
 	document.body.appendChild(templateDivRequired);
 
@@ -56,7 +56,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	{{markdown(
 	'1|2|3\n' ~
 	'---|---|---\n' ~
-	settings.plugins.cookieconsent.funcookies)}}
+	settings.plugins.cookiebanner.funcookies)}}
 	</template>`
 	document.body.appendChild(templateDivFunctional)
 
@@ -68,7 +68,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	{{markdown(
 	'1|2|3\n' ~
 	'---|---|---\n' ~	
-	settings.plugins.cookieconsent.marcookies)}}
+	settings.plugins.cookiebanner.marcookies)}}
 	</template>`
 	document.body.appendChild(templateDivMarketing)
 
@@ -77,14 +77,14 @@ window.addEventListener("DOMContentLoaded", function(){
 	document.body.appendChild(rootDiv);
 	const script = document.createElement('SCRIPT');
 	const vendor = document.createElement('SCRIPT');
-	script.src = '/plugins/cookieconsent/public/cookiebanner-index.min.js';
+	script.src = '/plugins/cookiebanner/public/cookiebanner-index.min.js';
 	script.type = 'module';
-	vendor.src = '/plugins/cookieconsent/public/cookiebanner-vendor.min.js';
+	vendor.src = '/plugins/cookiebanner/public/cookiebanner-vendor.min.js';
 	vendor.type  = 'module';
 	document.body.appendChild(vendor);
 	document.body.appendChild(script);
 });
 
 window.addEventListener('bannerconsent',(e)=>{
-	{{settings.plugins.cookieconsent.javascriptcallback}}
+	{{settings.plugins.cookiebanner.javascriptcallback}}
 })
