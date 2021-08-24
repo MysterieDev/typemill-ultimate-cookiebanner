@@ -3,6 +3,7 @@ import {
   setConsentFunCookie,
   setConsentReqCookie,
   setConsentMarCookie,
+  getConsentCookies,
 } from "./consent-handling";
 import { CookieCategory as CookieCategory } from "./listing/cookie-table";
 
@@ -37,6 +38,13 @@ export function handleFinishedConsentInteraction(category: CookieCategory) {
     setConsentMarCookie(false);
   }
 
+  fireCallback(false);
+}
+
+export function fireCallback(checkCookies: boolean) {
+  if (checkCookies) {
+    consent = getConsentCookies();
+  }
   window.dispatchEvent(finishedConsentEvent);
 }
 

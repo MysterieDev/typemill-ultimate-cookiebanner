@@ -53,3 +53,11 @@ function cleanCookies() {
   Cookies.remove(consentFunCookie);
   Cookies.remove(consentMarCookie);
 }
+
+export function getConsentCookies() {
+  return {
+    req: true,
+    fun: Cookies.get(consentFunCookie) === "TRUE" ? true : false,
+    mar: Cookies.get(consentMarCookie) === "TRUE" ? true : false,
+  };
+}
