@@ -1,10 +1,7 @@
 import { Component, onMount } from "solid-js";
 import "./assets/css/styles.css";
 import "./assets/css/custom-styles.css";
-import {
-  CookieTable,
-  CookieCategorie as CookieCategory,
-} from "./listing/cookie-table";
+import { CookieTable, CookieCategory } from "./listing/cookie-table";
 import { closeCookiebanner, disableOtherUI } from "./banner-handling";
 
 const App: Component = () => {
@@ -36,12 +33,18 @@ const App: Component = () => {
         />
         <div className="columns is-mobile">
           <div className="column">
-            <button className="button is-secondary" onClick={closeCookiebanner}>
+            <button
+              className="button is-secondary"
+              onClick={() => closeCookiebanner(CookieCategory.required)}
+            >
               {window.cookiemeta.declinenonrequiredbtn}
             </button>
           </div>
           <div className="column">
-            <button className="button is-primary" onClick={closeCookiebanner}>
+            <button
+              className="button is-primary"
+              onClick={() => closeCookiebanner(CookieCategory.functional)}
+            >
               {window.cookiemeta.acceptallbtn}
             </button>
           </div>

@@ -1,7 +1,7 @@
 import { createSignal } from "solid-js";
 
 export function CookieTable(props) {
-  let category: CookieCategorie = props.category;
+  let category: CookieCategory = props.category;
   let cookies = generateListing(category);
   let showCookiesLabel: string = window.cookiemeta.showmore;
   let hideCookiesLabel: string = window.cookiemeta.showless;
@@ -52,7 +52,7 @@ export function CookieTable(props) {
   );
 }
 
-function generateListing(category: CookieCategorie) {
+function generateListing(category: CookieCategory) {
   const cookies: CookieDefinition[] = [];
   const requiredCookiesTemplate =
     // Get Table Template
@@ -109,7 +109,7 @@ interface CookieDefinition {
   persistence?: string;
 }
 
-export enum CookieCategorie {
+export enum CookieCategory {
   required = "Req",
   functional = "Fun",
   marketing = "Mar",
