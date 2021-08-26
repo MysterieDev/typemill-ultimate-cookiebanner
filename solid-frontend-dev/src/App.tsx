@@ -14,7 +14,7 @@ const App: Component = () => {
     return (
       <button
         className="button"
-        style="background-color: #35b74d"
+        style="background-color: #35b74d; color: white !important;"
         onClick={() => closeCookiebanner(CookieCategory.marketing)}
       >
         {window.cookiemeta.acceptallbtn}
