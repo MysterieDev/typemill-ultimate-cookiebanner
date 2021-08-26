@@ -1,8 +1,10 @@
 import { createSignal, Show } from "solid-js";
+import { setListingState } from "./state";
 
 export function CookieTable(props) {
   let category: CookieCategory = props.category;
   let cookies = generateListing(category);
+  setListingState({ [category]: cookies });
   let showCookiesLabel: string = window.cookiemeta.showmore;
   let hideCookiesLabel: string = window.cookiemeta.showless;
   const [tableOpen, toggleTable] = createSignal(false);

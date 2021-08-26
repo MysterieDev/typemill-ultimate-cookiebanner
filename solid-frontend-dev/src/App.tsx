@@ -1,14 +1,26 @@
-import { Component, onMount } from "solid-js";
+import { Component, onMount, Show } from "solid-js";
 import "./assets/css/styles.css";
 import "./assets/css/custom-styles.css";
 import { CookieTable, CookieCategory } from "./listing/cookie-table";
 import { closeCookiebanner, disableOtherUI } from "./banner-handling";
+import { listingState } from "./listing/state";
 
 const App: Component = () => {
   onMount(() => {
     disableOtherUI();
   });
 
+  function acceptAllBtn() {
+    return (
+      <button
+        className="button"
+        style="background-color: #35b74d"
+        onClick={() => closeCookiebanner(CookieCategory.marketing)}
+      >
+        {window.cookiemeta.acceptallbtn}
+      </button>
+    );
+  }
   return (
     <div id="backgroundContainer">
       <div className="container cookieContainer content">
@@ -41,25 +53,21 @@ const App: Component = () => {
               {window.cookiemeta.declinenonrequiredbtn}
             </button>
           </div>
+          <Show when={listingState.Fun.length === 0}>{acceptAllBtn()}</Show>
         </div>
-        <div className="columns">
-          <div className="column">
-            <button
-              className="button is-small is-secondary"
-              onClick={() => closeCookiebanner(CookieCategory.functional)}
-            >
-              {window.cookiemeta.onlyfunctionalbtn}
-            </button>
+        <Show when={listingState.Fun.length > 0}>
+          <div className="columns">
+            <div className="column">
+              <button
+                className="button is-small is-secondary"
+                onClick={() => closeCookiebanner(CookieCategory.functional)}
+              >
+                {window.cookiemeta.onlyfunctionalbtn}
+              </button>
+            </div>
+            <div className="column">{acceptAllBtn()}</div>
           </div>
-          <div className="column">
-            <button
-              className="button  is-primary"
-              onClick={() => closeCookiebanner(CookieCategory.marketing)}
-            >
-              {window.cookiemeta.acceptallbtn}
-            </button>
-          </div>
-        </div>
+        </Show>
       </div>
     </div>
   );
