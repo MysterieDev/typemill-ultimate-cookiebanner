@@ -1,4 +1,4 @@
-import { createSignal } from "solid-js";
+import { createSignal, Show } from "solid-js";
 
 export function CookieTable(props) {
   let category: CookieCategory = props.category;
@@ -7,8 +7,8 @@ export function CookieTable(props) {
   let hideCookiesLabel: string = window.cookiemeta.showless;
   const [tableOpen, toggleTable] = createSignal(false);
 
-  return cookies && cookies.length > 0 ? (
-    <div>
+  return (
+    <Show when={cookies && cookies.length > 0}>
       <p>
         <strong>{window.cookiemeta[category].headline}</strong>
       </p>
@@ -24,7 +24,8 @@ export function CookieTable(props) {
           ..{tableOpen() ? hideCookiesLabel : showCookiesLabel}
         </small>
       </p>
-      {tableOpen() ? (
+
+      <Show when={tableOpen()}>
         <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
           <thead>
             <tr>
@@ -43,12 +44,8 @@ export function CookieTable(props) {
             ))}
           </tbody>
         </table>
-      ) : (
-        ""
-      )}
-    </div>
-  ) : (
-    ""
+      </Show>
+    </Show>
   );
 }
 
