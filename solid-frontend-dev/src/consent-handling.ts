@@ -52,7 +52,7 @@ export function doesItneedToShowBanner() {
 }
 
 function hasNoCookieParam() {
-  return new URL(window.location.href).searchParams.get("nocb");
+  return !!new URL(window.location.href).searchParams.get("nocb");
 }
 
 function cleanCookies() {
