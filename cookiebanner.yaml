@@ -17,7 +17,7 @@ forms:
           required: true
         introduction:
           type: textarea
-          label: introduction text
+          label: introduction text as markdown - if you add a link to your data privacy or other links without cookiebanner requirement, add the parameter ?nocb=true
         javascriptcallback:
           type: textarea
           label: callback of the banner - carries an object: { req: true/false, fun: true/false, mar: true/false} for the categories required, functional and marekting. True is for "user has consented". You can get it with 'e.detail'
