@@ -13,7 +13,7 @@ const App: Component = () => {
   function acceptAllBtn() {
     return (
       <button
-        className="button"
+        className="button  btn-accept-all"
         onClick={() => closeCookiebanner(CookieCategory.marketing)}
       >
         {window.cookiemeta.acceptallbtn}
