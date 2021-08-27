@@ -14,7 +14,7 @@ export function CookieTable(props) {
 
   return (
     <Show when={cookies && cookies.length > 0}>
-      <h3>{window.cookiemeta[category].headline}</h3>
+      <h4>{window.cookiemeta[category].headline}</h4>
       <p
         className="marginBtns"
         onClick={() => {
