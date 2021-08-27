@@ -44,10 +44,10 @@ name|host|persistence
 ### automation
 
 The cookiebanner automatically detects which category is filled out and will thereby only display the buttons and the tables that are worthy to display
- 
- - only functional button will only be displayed if there are functional cookies
- - tables will only be displayed if there is at least one cookie
- 
+
+- only functional button will only be displayed if there are functional cookies
+- tables will only be displayed if there is at least one cookie
+
 #### always up to date data-privacy site
 
 the app will search for a container with the id
@@ -57,19 +57,27 @@ the app will search for a container with the id
 #cbMarTable table and explainer for marketing cookies
 
 these can be set in typemill as follows:
+
 - go into raw-mode
 - inser a figure using this syntax:
+
 1. ![]{#cbReqTable}
 2. ![]{#cbFunTable}
 3. ![]{#cbMarTable}
+
 - This will create three figures - each one of these is for one category. They follow the same automation rules!
 
 On these figures, the plugin will install the ui for the corresponding cookie category
 
 ### Reset the consent / Update the consent
 
-The setting consent version in the admin area represents your consent version for your current cookie settings. 
+The setting consent version in the admin area represents your consent version for your current cookie settings.
 If you change marketing cookies, you have to redisplay the cookiebanner for users. By setting the consent version to something else, or just incrementing it, the cookiebanner will be displayed again.
 
 This works by checking the cbSet cookie value in the browser. If there is a diff, we delete our consent cookies and ask again.
 
+### Add Sites that can be displayed without cookiebanner
+
+In some cases, you want to give the user one page and its content, even if the cookiebanenr is not consented. For example the imprint or the data privacy. You can add links into the introduction texts and put the parameter:  
+www.test.de **?nocb=true**  
+This will _deactivate_ the cookiebanner from blocking your site as a whitelisted case!
