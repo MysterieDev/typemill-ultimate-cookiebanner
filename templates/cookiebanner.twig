@@ -80,9 +80,9 @@ window.addEventListener("DOMContentLoaded", function(){
 	document.body.appendChild(rootDiv);
 	const script = document.createElement('SCRIPT');
 	const vendor = document.createElement('SCRIPT');
-	script.src = '/plugins/cookiebanner/public/cookiebanner-index.min.js';
+	script.src = '{{base_url}}/plugins/cookiebanner/public/cookiebanner-index.min.js';
 	script.type = 'module';
-	vendor.src = '/plugins/cookiebanner/public/cookiebanner-vendor.min.js';
+	vendor.src = '{{base_url}}/plugins/cookiebanner/public/cookiebanner-vendor.min.js';
 	vendor.type  = 'module';
 	document.body.appendChild(vendor);
 	document.body.appendChild(script);
