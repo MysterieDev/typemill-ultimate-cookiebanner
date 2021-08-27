@@ -17,9 +17,24 @@ interface cookieBannerMeta {
   acceptallbtn: string;
   declinenonrequiredbtn: string;
   onlyfunctionalbtn: string;
-  Req: { text?: string; headline?: string; cookies: CookieDefinition[] };
-  Fun: { text?: string; headline?: string; cookies: CookieDefinition[] };
-  Mar: { text?: string; headline?: string; cookies: CookieDefinition[] };
+  Req: {
+    text?: string;
+    headline?: string;
+    table?: unknown;
+    cookies: CookieDefinition[];
+  };
+  Fun: {
+    text?: string;
+    headline?: string;
+    table?: unknown;
+    cookies: CookieDefinition[];
+  };
+  Mar: {
+    text?: string;
+    headline?: string;
+    table?: unknown;
+    cookies: CookieDefinition[];
+  };
 }
 
 export {};

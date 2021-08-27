@@ -26,24 +26,9 @@ const App: Component = () => {
       <div className="container cookieContainer content">
         <h2 textContent={window.cookiemeta.headline}></h2>
         <p innerHTML={window.cookiemeta.introduction}></p>
-        <CookieTable
-          category={CookieCategory.required}
-          cookieNameTable={window.cookiemeta.cookienameColumn}
-          hostNameTable={window.cookiemeta.cookiehostColumn}
-          persistenceNameTable={window.cookiemeta.cookiepersistenceColumn}
-        />
-        <CookieTable
-          category={CookieCategory.functional}
-          cookieNameTable={window.cookiemeta.cookienameColumn}
-          hostNameTable={window.cookiemeta.cookiehostColumn}
-          persistenceNameTable={window.cookiemeta.cookiepersistenceColumn}
-        />
-        <CookieTable
-          category={CookieCategory.marketing}
-          cookieNameTable={window.cookiemeta.cookienameColumn}
-          hostNameTable={window.cookiemeta.cookiehostColumn}
-          persistenceNameTable={window.cookiemeta.cookiepersistenceColumn}
-        />
+        <CookieTable category={CookieCategory.required} />
+        <CookieTable category={CookieCategory.functional} />
+        <CookieTable category={CookieCategory.marketing} />
         <div className="columns mt-2">
           <div className="column">
             <button

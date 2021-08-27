@@ -14,9 +14,7 @@ export function CookieTable(props) {
 
   return (
     <Show when={cookies && cookies.length > 0}>
-      <p>
-        <strong>{window.cookiemeta[category].headline}</strong>
-      </p>
+      <h3>{window.cookiemeta[category].headline}</h3>
       <p
         className="marginBtns"
         onClick={() => {
@@ -31,24 +29,13 @@ export function CookieTable(props) {
       </p>
 
       <Show when={tableOpen()}>
-        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-          <thead>
-            <tr>
-              <th>{props.cookieNameTable}</th>
-              <th>{props.hostNameTable}</th>
-              <th>{props.persistenceNameTable}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cookies.map((cookieDef) => (
-              <tr>
-                <td>{cookieDef.name}</td>
-                <td>{cookieDef.host}</td>
-                <td>{cookieDef.persistence}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <Listing
+          cookies={cookies}
+          category={category}
+          cookieNameTable={window.cookiemeta.cookienameColumn}
+          hostNameTable={window.cookiemeta.cookiehostColumn}
+          persistenceNameTable={window.cookiemeta.cookiepersistenceColumn}
+        ></Listing>
       </Show>
     </Show>
   );
@@ -103,4 +90,27 @@ function generateListing(category: CookieCategory) {
     });
   });
   return cookies;
+}
+
+function Listing(props) {
+  return (
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+      <thead>
+        <tr>
+          <th>{props.cookieNameTable}</th>
+          <th>{props.hostNameTable}</th>
+          <th>{props.persistenceNameTable}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {listingState[props.category].map((cookieDef) => (
+          <tr>
+            <td>{cookieDef.name}</td>
+            <td>{cookieDef.host}</td>
+            <td>{cookieDef.persistence}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
 }
