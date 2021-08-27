@@ -32,10 +32,13 @@ window.addEventListener("DOMContentLoaded", function(){
 	// add texts
 	window.cookiemeta.Req.text = `{{settings.plugins.cookiebanner.reqtext}}`
 	window.cookiemeta.Req.headline = `{{settings.plugins.cookiebanner.reqheadline}}`
+	window.cookiemeta.Req.cookies = []
 	window.cookiemeta.Fun.text = `{{settings.plugins.cookiebanner.funtext}}`
 	window.cookiemeta.Fun.headline = `{{settings.plugins.cookiebanner.funheadline}}`
+	window.cookiemeta.Fun.cookies = []
 	window.cookiemeta.Mar.text = `{{settings.plugins.cookiebanner.martext}}`
 	window.cookiemeta.Mar.headline = `{{settings.plugins.cookiebanner.marheadline}}`
+	window.cookiemeta.Mar.cookies = []
 	// required Cookies
 	const templateDivRequired = document.createElement('DIV');
 	templateDivRequired.innerHTML =

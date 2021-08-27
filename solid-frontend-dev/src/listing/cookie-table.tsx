@@ -1,10 +1,13 @@
 import { createSignal, Show } from "solid-js";
-import { setListingState } from "./state";
+import { CookieCategory, CookieDefinition } from "../types";
+import { listingState, updateCookieState } from "./state";
 
 export function CookieTable(props) {
   let category: CookieCategory = props.category;
   let cookies = generateListing(category);
-  setListingState({ [category]: cookies });
+  updateCookieState(category, cookies);
+  // mount them onto the window meta object
+  window.cookiemeta[category].cookies = listingState[category];
   let showCookiesLabel: string = window.cookiemeta.showmore;
   let hideCookiesLabel: string = window.cookiemeta.showless;
   const [tableOpen, toggleTable] = createSignal(false);
@@ -100,16 +103,4 @@ function generateListing(category: CookieCategory) {
     });
   });
   return cookies;
-}
-
-interface CookieDefinition {
-  name: string;
-  host?: string;
-  persistence?: string;
-}
-
-export enum CookieCategory {
-  required = "Req",
-  functional = "Fun",
-  marketing = "Mar",
 }

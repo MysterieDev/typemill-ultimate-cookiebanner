@@ -5,7 +5,7 @@ import {
   setConsentMarCookie,
   getConsentCookies,
 } from "./consent-handling";
-import { CookieCategory as CookieCategory } from "./listing/cookie-table";
+import { CookieCategory } from "./types";
 
 let consent = { req: true, fun: false, mar: false };
 

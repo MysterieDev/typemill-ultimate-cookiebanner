@@ -1,9 +1,10 @@
 import { Component, onMount, Show } from "solid-js";
 import "./assets/css/styles.css";
 import "./assets/css/custom-styles.css";
-import { CookieTable, CookieCategory } from "./listing/cookie-table";
+import { CookieTable } from "./listing/cookie-table";
 import { closeCookiebanner, disableOtherUI } from "./banner-handling";
 import { listingState } from "./listing/state";
+import { CookieCategory } from "./types";
 
 const App: Component = () => {
   onMount(() => {

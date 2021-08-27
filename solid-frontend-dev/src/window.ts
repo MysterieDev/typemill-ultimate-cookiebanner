@@ -1,3 +1,4 @@
+import { CookieDefinition } from "./types";
 declare global {
   interface Window {
     cookiemeta: cookieBannerMeta;
@@ -16,9 +17,9 @@ interface cookieBannerMeta {
   acceptallbtn: string;
   declinenonrequiredbtn: string;
   onlyfunctionalbtn: string;
-  Req: { text?: string; headline?: string };
-  Fun: { text?: string; headline?: string };
-  Mar: { text?: string; headline?: string };
+  Req: { text?: string; headline?: string; cookies: CookieDefinition[] };
+  Fun: { text?: string; headline?: string; cookies: CookieDefinition[] };
+  Mar: { text?: string; headline?: string; cookies: CookieDefinition[] };
 }
 
 export {};
