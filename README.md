@@ -1,7 +1,7 @@
 # Your Cookiebanner Solution for the Typemill CMS
 
 **DISCLAIMER:** As the author of the plugin, i tried to be considerate about the regulations and laws regarding data privacy.  
-Even though, this banner is definitely suitable for the current standard, there is **NO** legal warranty for the implementation of the Plugin on your typemill instalation
+Even though, this banner is definitely suitable for the current standard, there is **NO** legal warranty, neither technical, nor regarding the law, for the implementation of the Plugin on your typemill installation!
 
 ## Support
 
