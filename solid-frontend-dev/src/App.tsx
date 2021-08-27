@@ -52,7 +52,9 @@ const App: Component = () => {
               {window.cookiemeta.declinenonrequiredbtn}
             </button>
           </div>
-          <Show when={listingState.Fun.length === 0}>{acceptAllBtn()}</Show>
+          <Show when={listingState.Fun.length === 0}>
+            <div className="column">{acceptAllBtn()}</div>
+          </Show>
         </div>
         <Show when={listingState.Fun.length > 0}>
           <div className="columns">
