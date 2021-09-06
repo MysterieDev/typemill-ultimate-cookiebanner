@@ -17,11 +17,14 @@ Questions? Problems? Feel free to open an Issue!
 Do you want to support the plugin and the ongoing development of it? The best way is with a donation towards the maintenance of this plugin.
 [Here is the link to my Ko-Fi site](https://ko-fi.com/slezakit/?hidefeed=true&widget=true&embed=true).
 
+
 ## Installation
 
 Just download the plugin and put it in Typemills Plugin folder, then go into the plugins admin area and activate it!
 
-You have to fill out some settings like your texts, headlines and introduction to your cookie-listing to take the full power of the plugin
+You have to fill out some settings like your texts, headlines and introduction to your cookie-listing to take the full power of the plugin.
+
+IE is not supported with this plugin due to template literal strings.
 
 ## Usage
 
