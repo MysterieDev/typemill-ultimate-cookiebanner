@@ -1,6 +1,6 @@
 # Your Cookiebanner Solution for the Typemill CMS
 
-Welcome to the ultimate-cookiebanner Plugin. The one stop for a user-respecting Cookie-Banner Listing!
+Welcome to the ultimate-cookiebanner Plugin.
 
 With this Plugin, you get a markdown based solution for a up to date cookiebanner integrated into the typemill CM-System.
 
