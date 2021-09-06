@@ -1,5 +1,13 @@
 # Your Cookiebanner Solution for the Typemill CMS
 
+With this Plugin, you get a markdown based solution for a up to date cookiebanner integrated into the typemill CMS System.
+
+You can whitelist certain pages to not require consent in order to view them with query parameters. You can also control the version of the cookiebanner, the user will see.
+
+The Banner is based on PHP and SolidJS. SolidJS is a blazing fast solution for little reactive Applications. That way, the user does not experience any content shift.
+
+Questions? Feel free to open an Issue!
+
 **DISCLAIMER:** As the author of the plugin, i tried to be considerate about the regulations and laws regarding data privacy.  
 Even though, this banner is definitely suitable for the current standard, there is **NO** legal warranty, neither technical, nor regarding the law, for the implementation of the Plugin on your typemill installation!
 
