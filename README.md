@@ -6,7 +6,7 @@ With this Plugin, you get a markdown based solution for a up to date cookiebanne
 
 You can whitelist certain pages to not require consent in order to view them with query parameters. You can also control the version of the cookiebanner, to redisplay the latest cookie settings.
 
-The Banner is based on PHP and SolidJS. SolidJS is a blazing fast solution for little reactive Applications. It's blazing fast and suits this usecase well.
+The Banner is based on PHP and SolidJS. SolidJS is a blazing fast solution for little reactive Applications.
 
 Questions? Problems? Feel free to open an Issue!
 
