@@ -1,20 +1,30 @@
 # Your Cookiebanner Solution for the Typemill CMS
 
-**DISCLAIMER:** As the author of the plugin, i tried to be considerate about the regulations and laws regarding data privacy.  
-Even though, this banner is definitely suitable for the current standard, there is **NO** legal warranty, neither technical, nor regarding the law, for the implementation of the Plugin on your typemill installation!
+Welcome to the ultimate-cookiebanner Plugin.
+
+With this Plugin, you get a markdown based solution for a up to date cookiebanner integrated into the typemill CM-System.
+
+You can whitelist certain pages to not require consent in order to view them with query parameters. You can also control the version of the cookiebanner, to redisplay the latest cookie settings.
+
+The Banner is based on PHP and SolidJS. SolidJS is a blazing fast solution for little reactive Applications.
+
+Questions? Problems? Feel free to open an Issue!
+
+**DISCLAIMER:** there is **NO** legal warranty, neither technical, nor regarding the law, for the implementation of the Plugin on your typemill installation!
 
 ## Support
 
-Do you want to support the plugin and the ongoing development of it? The best way is with a donation towards the maintenance.
+Do you want to support the plugin and the ongoing development of it? The best way is with a donation towards the maintenance of this plugin.
 [Here is the link to my Ko-Fi site](https://ko-fi.com/slezakit/?hidefeed=true&widget=true&embed=true).
 
-Welcome to the ultimate-cookiebanner Plugin. The one stop for a user-respecting Cookie-Banner Listing!
 
 ## Installation
 
 Just download the plugin and put it in Typemills Plugin folder, then go into the plugins admin area and activate it!
 
-You have to fill out some settings like your texts, headlines and introduction to your cookie-listing to take the full power of the plugin
+You have to fill out some settings like your texts, headlines and introduction to your cookie-listing to take the full power of the plugin.
+
+IE is not supported with this plugin due to template literal strings.
 
 ## Usage
 
@@ -67,7 +77,7 @@ these can be set in typemill as follows:
 
 - This will create three figures - each one of these is for one category. They follow the same automation rules!
 
-On these figures, the plugin will install the ui for the corresponding cookie category
+On these figures, the plugin will install the ui for the corresponding cookie category. Be noticed that this is a solution as a pseudo shortcode. Typemill in its current version will generate a figure element with the corresponding id, and we completely replace that element with our listing.
 
 ### Reset the consent / Update the consent
 
