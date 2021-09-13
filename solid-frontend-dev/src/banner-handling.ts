@@ -32,6 +32,7 @@ export function handleFinishedConsentInteraction(category: CookieCategory) {
     setConsentFunCookie(false);
   }
   if (category === CookieCategory.marketing) {
+    setConsentFunCookie(true);
     setConsentMarCookie(true);
     consent.mar = true;
   } else {
