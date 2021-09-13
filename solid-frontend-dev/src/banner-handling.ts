@@ -34,6 +34,7 @@ export function handleFinishedConsentInteraction(category: CookieCategory) {
   if (category === CookieCategory.marketing) {
     setConsentFunCookie(true);
     setConsentMarCookie(true);
+    consent.fun = true;
     consent.mar = true;
   } else {
     setConsentMarCookie(false);
