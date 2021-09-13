@@ -20,13 +20,13 @@ export function setConsentReqCookie() {
   });
 }
 export function setConsentFunCookie(allowed: boolean) {
-  return Cookies.set(consentMarCookie, allowed ? "TRUE" : "FALSE", {
+  return Cookies.set(consentFunCookie, allowed ? "TRUE" : "FALSE", {
     expires: consentDurationInDays,
   });
 }
 
 export function setConsentMarCookie(allowed: boolean) {
-  return Cookies.set(consentFunCookie, allowed ? "TRUE" : "FALSE", {
+  return Cookies.set(consentMarCookie, allowed ? "TRUE" : "FALSE", {
     expires: consentDurationInDays,
   });
 }
