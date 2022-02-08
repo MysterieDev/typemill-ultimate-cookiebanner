@@ -22,7 +22,7 @@ forms:
           label: introduction text as markdown - if you add a link to your data privacy or other links without cookiebanner requirement, add the parameter ?nocb=true
         javascriptcallback:
           type: textarea
-          label: callback of the banner - carries an object: { req: true/false, fun: true/false, mar: true/false} for the categories required, functional and marekting. True is for "user has consented". You can get it with 'e.detail'
+          label: callback of the banner - carries an object: { req: true/false, fun: true/false, mar: true/false} for the categories required, functional and marekting. True is for "user has consented". You can get it with 'e.detail'. You are already inside the callback, so just write javascript-statement-blocks.
         consentversion:
           type: text
           label: Consent Version - Increment this string number to force a new cookiebanner to show
@@ -65,7 +65,8 @@ forms:
       fields:
         reqcookies:
           type: textarea
-          label: Required Cookies - you have to use a markdown table as follows: cookieName | cookieHost | cookiePersistence 
+          label: Required Storage Elements - you have to use a markdown table as follows: 'cookieName | cookieHost | cookiePersistence (enter as Number:  -2 is localstorage, -1 is Sessionstorage, 0 is a SESSION Cookie, everrything else is the persistence in days!'.
+          e.G test|TESTHOST|0 --> SESSION Cookie
         reqheadline:
           type: text
           label: The headline for this cookie category    
@@ -78,7 +79,8 @@ forms:
       fields:
         funcookies:
           type: textarea
-          label: functional Cookies - you have to use a markdown table as follows: cookieName | cookieHost | cookiePersistence 
+          label: Functional Storage Elements - you have to use a markdown table as follows: 'cookieName | cookieHost | cookiePersistence (enter as Number:  -2 is localstorage, -1 is Sessionstorage, 0 is a SESSION Cookie, everrything else is the persistence in days!'.
+          e.G test|TESTHOST|0 --> SESSION Cookie
         funheadline:
           type: text
           label: The headline for this cookie category    
@@ -91,7 +93,8 @@ forms:
       fields:
         marcookies:
           type: textarea
-          label: Marketing Cookies - you have to use a markdown table as follows: cookieName | cookieHost | cookiePersistence 
+          label: Marekting Storage Elements - you have to use a markdown table as follows: 'cookieName | cookieHost | cookiePersistence (enter as Number:  -2 is localstorage, -1 is Sessionstorage, 0 is a SESSION Cookie, everrything else is the persistence in days!'.
+          e.G test|TESTHOST|0 --> SESSION Cookie
         marheadline:
           type: text
           label: The headline for this cookie category    
