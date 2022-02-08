@@ -61,11 +61,11 @@ forms:
           required: true
     required:
       type: fieldset
-      legend: config for required Cookies
+      legend: config for required Storage Elements
       fields:
         reqcookies:
           type: textarea
-          label: Required Storage Elements - you have to use a markdown table as follows: 'cookieName | cookieHost | cookiePersistence (enter as Number:  -2 is localstorage, -1 is Sessionstorage, 0 is a SESSION Cookie, everrything else is the persistence in days!'. e.G test|TESTHOST|0 --> SESSION Cookie
+          label: Required Storage Elements - you have to use a markdown table as follows: 'cookieName | cookieHost | cookiePersistence' (enter as Number:  -2 is localstorage, -1 is Sessionstorage, 0 is a SESSION Cookie, everrything else is the persistence in days!). e.G test|TESTHOST|0 --> SESSION Cookie
         reqheadline:
           type: text
           label: The headline for this cookie category    
@@ -74,11 +74,11 @@ forms:
           label: a text describing what the functional cookie category does for your site
     functional:
       type: fieldset
-      legend: config for funcional Cookies
+      legend: config for funcional Storage Elements
       fields:
         funcookies:
           type: textarea
-          label: Functional Storage Elements - you have to use a markdown table as follows: 'cookieName | cookieHost | cookiePersistence (enter as Number:  -2 is localstorage, -1 is Sessionstorage, 0 is a SESSION Cookie, everrything else is the persistence in days!'. e.G test|TESTHOST|0 --> SESSION Cookie
+          label: Functional Storage Elements - you have to use a markdown table as follows: 'cookieName | cookieHost | cookiePersistence' (enter as Number:  -2 is localstorage, -1 is Sessionstorage, 0 is a SESSION Cookie, everrything else is the persistence in days!). e.G test|TESTHOST|0 --> SESSION Cookie
         funheadline:
           type: text
           label: The headline for this cookie category    
@@ -87,11 +87,11 @@ forms:
           label: a text describing what the functional cookie category does for your site
     marketing:
       type: fieldset
-      legend: config for marketing Cookies
+      legend: config for marketing Storage Elements
       fields:
         marcookies:
           type: textarea
-          label: Marekting Storage Elements - you have to use a markdown table as follows: 'cookieName | cookieHost | cookiePersistence (enter as Number:  -2 is localstorage, -1 is Sessionstorage, 0 is a SESSION Cookie, everrything else is the persistence in days!'. e.G test|TESTHOST|0 --> SESSION Cookie
+          label: Marekting Storage Elements - you have to use a markdown table as follows: 'cookieName | cookieHost | cookiePersistence' (enter as Number:  -2 is localstorage, -1 is Sessionstorage, 0 is a SESSION Cookie, everrything else is the persistence in days!). e.G test|TESTHOST|0 --> SESSION Cookie
         marheadline:
           type: text
           label: The headline for this cookie category    
