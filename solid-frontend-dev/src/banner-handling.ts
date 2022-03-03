@@ -8,10 +8,12 @@ import {
 import { CookieCategory } from "./types";
 
 let consent = { req: true, fun: false, mar: false };
-
-const finishedConsentEvent = new CustomEvent("bannerconsent", {
-  detail: consent,
+const getConsent = ()=> consent
+const finishedConsentEvent = (didSeeCookiebannerUI: boolean) => new CustomEvent("bannerconsent", {
+  detail: {...getConsent(), newConsent: didSeeCookiebannerUI},
 });
+
+const setConsent = (details)=> {consent = details};
 
 export const rootName = "#solidApp";
 export const preventScrollClass = "cbPreventScroll";
@@ -43,11 +45,11 @@ export function handleFinishedConsentInteraction(category: CookieCategory) {
   fireCallback(false);
 }
 
-export function fireCallback(checkCookies: boolean) {
-  if (checkCookies) {
-    consent = getConsentCookies();
+export function fireCallback(cbAlreadySeen: boolean) {
+  if (cbAlreadySeen) {
+    setConsent(getConsentCookies());
   }
-  window.dispatchEvent(finishedConsentEvent);
+  window.dispatchEvent(finishedConsentEvent(!cbAlreadySeen));
 }
 
 export function disableOtherUI() {
