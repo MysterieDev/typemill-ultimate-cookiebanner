@@ -28,9 +28,9 @@ IE is not supported with this plugin due to template literal strings.
 
 ## Usage
 
-### adding Cookies
+### adding Storage Elements
 
-Cookies are provided in three categories
+storage elements are provided in three categories
 
 - required
 - functional
@@ -46,25 +46,29 @@ The first category will always be set as consented, as it is a required category
 
 The second and third category are non-essential. Functional is normally used for statistics collection regarding how users act on your site.
 
-Marketing Cookies are self explainatory with the word "marketing". They have the purpose of giving you more power to do marketing by using tools specialized in it.
+Marketing Elements are self explainatory with the word "marketing". They have the purpose of giving you more power to do marketing by using tools specialized in it.
 
-**Adding a Cookie** in the Typemill admin area is very easy. just use the markdown table implementation pattern:
+**Adding a Storage element** in the Typemill admin area is very easy. just use the markdown table implementation pattern:
 name|host|persistence
-
+Example below:
+test|/|1 --> Cookie test on root host with 1 day persistence
+test|/|0 --> Sessioncookie test on root host
+test|/|-1 --> Sessionstorage element test on root host
+test|/|-2 --> Localstorage element test on root host
 ### automation
 
 The cookiebanner automatically detects which category is filled out and will thereby only display the buttons and the tables that are worthy to display
 
-- only functional button will only be displayed if there are functional cookies
+- only functional button will only be displayed if there are functional storage elements
 - tables will only be displayed if there is at least one cookie
 
 #### always up to date data-privacy site
 
 the app will search for a container with the id
 
-#cbReqTable table and explainer for required cookies
-#cbFunTable table and explainer for functional cookies
-#cbMarTable table and explainer for marketing cookies
+#cbReqTable table and explainer for required storage elementsies
+#cbFunTable table and explainer for functional storage elements
+#cbMarTable table and explainer for marketing storage elements
 
 these can be set in typemill as follows:
 
@@ -82,7 +86,7 @@ On these figures, the plugin will install the ui for the corresponding cookie ca
 ### Reset the consent / Update the consent
 
 The setting consent version in the admin area represents your consent version for your current cookie settings.
-If you change marketing cookies, you have to redisplay the cookiebanner for users. By setting the consent version to something else, or just incrementing it, the cookiebanner will be displayed again.
+If you change marketing storage elements, you have to redisplay the cookiebanner for users. By setting the consent version to something else, or just incrementing it, the cookiebanner will be displayed again.
 
 This works by checking the cbSet cookie value in the browser. If there is a diff, we delete our consent cookies and ask again.
 

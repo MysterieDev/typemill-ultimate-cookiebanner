@@ -80,9 +80,7 @@ function generateListing(category: CookieCategory) {
           break;
         case 2:
           const num = Number(td[cookieDefCategory].innerHTML);
-          num === 0
-            ? (cookieDef.persistence = "SESSION")
-            : (cookieDef.persistence = num.toString());
+          cookieDef.persistence = getPersistenceString(num);
           cookieDefCategory = 0;
           cookies.push(cookieDef);
           break;
@@ -90,6 +88,19 @@ function generateListing(category: CookieCategory) {
     });
   });
   return cookies;
+}
+
+function getPersistenceString(persistenceNumber: number){
+  switch (persistenceNumber) {
+    case -2:
+      return 'Localstorage';
+    case -1:
+      return 'Sessionstorage';
+    case 0:
+      return 'SESSION';
+    default:
+      return persistenceNumber.toString();
+  }
 }
 
 function Listing(props) {
