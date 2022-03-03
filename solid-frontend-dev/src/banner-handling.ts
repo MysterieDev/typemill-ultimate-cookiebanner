@@ -8,9 +8,9 @@ import {
 import { CookieCategory } from "./types";
 
 let consent = { req: true, fun: false, mar: false };
-
+const getConsent = ()=> consent
 const finishedConsentEvent = new CustomEvent("bannerconsent", {
-  detail: consent,
+  detail: getConsent(),
 });
 
 export const rootName = "#solidApp";
