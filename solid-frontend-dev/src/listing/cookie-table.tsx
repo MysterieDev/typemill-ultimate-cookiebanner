@@ -79,8 +79,10 @@ function generateListing(category: CookieCategory) {
           cookieDefCategory++;
           break;
         case 2:
-          const num = Number(td[cookieDefCategory].innerHTML);
-          cookieDef.persistence = getPersistenceString(num);
+          const val = td[cookieDefCategory].innerHTML.trim()
+          const asNumber = Number(val.trim())
+          const persistence = Number.isNaN(asNumber) ? val : asNumber;
+          cookieDef.persistence = getPersistenceString(persistence);
           cookieDefCategory = 0;
           cookies.push(cookieDef);
           break;
@@ -90,16 +92,20 @@ function generateListing(category: CookieCategory) {
   return cookies;
 }
 
-function getPersistenceString(persistenceNumber: number){
-  switch (persistenceNumber) {
-    case -2:
-      return 'Localstorage';
-    case -1:
-      return 'Sessionstorage';
-    case 0:
-      return 'SESSION';
-    default:
-      return persistenceNumber.toString();
+function getPersistenceString(persistence: number | string){
+  if(typeof persistence === 'number'){
+    switch (persistence) {
+      case -2:
+        return 'Localstorage';
+      case -1:
+        return 'Sessionstorage';
+      case 0:
+        return 'SESSION';
+      default:
+        return persistence.toString() }
+  }
+  else{
+    return persistence
   }
 }
 
