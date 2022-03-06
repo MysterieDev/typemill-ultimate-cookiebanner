@@ -1,5 +1,5 @@
 name: Cookie Banner
-version: 1.1.0
+version: 1.1.2
 description: Enables a cookie banner for websites
 author: Josef Slezak
 licence: MIT
@@ -22,7 +22,7 @@ forms:
           label: introduction text as markdown - if you add a link to your data privacy or other links without cookiebanner requirement, add the parameter ?nocb=true
         javascriptcallback:
           type: textarea
-          label: callback of the banner - carries an object: { req: true/false, fun: true/false, mar: true/false} for the categories required, functional and marekting. True is for "user has consented". You can get it with 'e.detail'. You are already inside the callback, so just write javascript-statement-blocks.
+          label: callback of the banner - carries an object: { req: true/false, fun: true/false, mar: true/false, newConsent: true/false} for the categories required, functional and marekting.True is for "user has consented". The attribute newConsent shows, if the user set the cookies just now or if it already persisted in the storage. You can get it with 'e.detail'. You are already inside the callback, so just write javascript-statement-blocks. 
         consentversion:
           type: text
           label: Consent Version - Increment this string number to force a new cookiebanner to show
