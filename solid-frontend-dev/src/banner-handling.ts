@@ -4,6 +4,7 @@ import {
   setConsentReqCookie,
   setConsentMarCookie,
   getConsentCookies,
+  hasRemoveConsentParam,
 } from "./consent-handling";
 import { CookieCategory } from "./types";
 
@@ -12,6 +13,7 @@ const getConsent = ()=> consent
 const finishedConsentEvent = (didSeeCookiebannerUI: boolean) => new CustomEvent("bannerconsent", {
   detail: {...getConsent(), newConsent: didSeeCookiebannerUI},
 });
+export const removedConsentEvent = new CustomEvent("trackingoptout");
 
 const setConsent = (details)=> {consent = details};
 
