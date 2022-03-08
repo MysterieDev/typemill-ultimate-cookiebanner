@@ -25,7 +25,7 @@ forms:
           label: callback of the banner - carries an object: { req: true/false, fun: true/false, mar: true/false, newConsent: true/false} for the categories required, functional and marekting.True is for "user has consented". The attribute newConsent shows, if the user set the cookies just now or if it already persisted in the storage. You can get it with 'e.detail'. You are already inside the callback, so just write javascript-statement-blocks. 
         optoutcallback:
           type: textarea
-          label: callback of the opt-out Event if the site loads with the **queryParam ?cboptout=true** You are already inside the callback, so just write javascript-statement-blocks. 
+          label: callback of the opt-out Event if the site loads with the queryParam ?cboptout=true You are already inside the callback, so just write javascript-statement-blocks. 
         consentversion:
           type: text
           label: Consent Version - Increment this string number to force a new cookiebanner to show

@@ -17,7 +17,7 @@ export const removedConsentEvent = new CustomEvent("trackingoptout");
 
 const setConsent = (details)=> {consent = details};
 
-export const rootName = "#solidApp";
+export const rootName = "#cbApp";
 export const preventScrollClass = "cbPreventScroll";
 
 export function closeCookiebanner(category: CookieCategory) {
