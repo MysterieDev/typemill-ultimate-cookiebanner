@@ -35,6 +35,7 @@ export function doesItneedToShowBanner() {
   if (hasNoCookieParam()) {
     return false;
   }
+
   if (Cookies.get(consentVersionCookie) === consentVersion) {
     if (
       Cookies.get(consentReqCookie) &&
@@ -53,6 +54,10 @@ export function doesItneedToShowBanner() {
 
 function hasNoCookieParam() {
   return !!new URL(window.location.href).searchParams.get("nocb");
+}
+
+export function hasRemoveConsentParam() {
+  return !!new URL(window.location.href).searchParams.get("cboptout");
 }
 
 function cleanCookies() {

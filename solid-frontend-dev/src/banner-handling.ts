@@ -4,6 +4,7 @@ import {
   setConsentReqCookie,
   setConsentMarCookie,
   getConsentCookies,
+  hasRemoveConsentParam,
 } from "./consent-handling";
 import { CookieCategory } from "./types";
 
@@ -12,10 +13,11 @@ const getConsent = ()=> consent
 const finishedConsentEvent = (didSeeCookiebannerUI: boolean) => new CustomEvent("bannerconsent", {
   detail: {...getConsent(), newConsent: didSeeCookiebannerUI},
 });
+export const removedConsentEvent = new CustomEvent("trackingoptout");
 
 const setConsent = (details)=> {consent = details};
 
-export const rootName = "#solidApp";
+export const rootName = "#cbApp";
 export const preventScrollClass = "cbPreventScroll";
 
 export function closeCookiebanner(category: CookieCategory) {

@@ -62,6 +62,16 @@ The cookiebanner automatically detects which category is filled out and will the
 - only functional button will only be displayed if there are functional storage elements
 - tables will only be displayed if there is at least one cookie
 
+### Banner Callbacks
+
+#### Consent Callback
+In the admin area you can set a callback that fires on every site, returns the consents and also displays if the cookiebanner was shown on this site
+
+#### OptOut Callback
+In the admin area you can set a callback that fires if the site loads with the **queryParam ?cboptout=true**
+
+
+
 #### always up to date data-privacy site
 
 the app will search for a container with the id
@@ -95,3 +105,4 @@ This works by checking the cbSet cookie value in the browser. If there is a diff
 In some cases, you want to give the user one page and its content, even if the cookiebanenr is not consented. For example the imprint or the data privacy. You can add links into the introduction texts and put the parameter:  
 www.test.de **?nocb=true**  
 This will _deactivate_ the cookiebanner from blocking your site as a whitelisted case!
+
