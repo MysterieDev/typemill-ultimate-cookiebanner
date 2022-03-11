@@ -77,7 +77,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	document.body.appendChild(templateDivMarketing)
 
 	const rootDiv = document.createElement('DIV');
-	rootDiv.id = "solidApp"
+	rootDiv.id = "cbApp"
 	document.body.appendChild(rootDiv);
 	const script = document.createElement('SCRIPT');
 	const vendor = document.createElement('SCRIPT');
@@ -92,3 +92,8 @@ window.addEventListener("DOMContentLoaded", function(){
 window.addEventListener('bannerconsent',(e)=>{
 	{{settings.plugins.cookiebanner.javascriptcallback}}
 })
+
+window.addEventListener('trackingoptout',(e)=>{
+	{{settings.plugins.cookiebanner.optoutcallback}}
+})
+

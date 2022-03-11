@@ -2,13 +2,18 @@ import { render } from "solid-js/web";
 
 import "./index.css";
 import App from "./App";
-import { doesItneedToShowBanner } from "./consent-handling";
-import { fireCallback } from "./banner-handling";
+import {
+  doesItneedToShowBanner,
+  hasRemoveConsentParam,
+} from "./consent-handling";
+import { fireCallback, removedConsentEvent } from "./banner-handling";
 import { CookieTable } from "./listing/cookie-table";
 import { CookieCategory } from "./types";
 
 if (doesItneedToShowBanner()) {
-  render(() => <App />, document.getElementById("solidApp"));
+  render(() => <App />, document.getElementById("cbApp"));
+} else if (hasRemoveConsentParam()) {
+  window.dispatchEvent(removedConsentEvent);
 } else {
   fireCallback(true);
 }
